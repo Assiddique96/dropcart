@@ -4,12 +4,13 @@
     "lib": [
       "dom",
       "dom.iterable",
-      "esnext",
-      
+      "esnext"
     ],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": [
+        "./*"
+      ]
     },
     "allowJs": true,
     "skipLibCheck": true,
@@ -21,23 +22,24 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "plugins": [
       {
         "name": "next"
       }
     ]
   },
-    "include": [
+  "include": [
     "next-env.d.ts",
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx",
-    "**/*.js",    // Add this
-    "**/*.jsx"    // Add this   
+    "**/*.js", // Add this
+    "**/*.jsx" // Add this   
+    ,
+    ".next/dev/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
   ]
-  
 }
