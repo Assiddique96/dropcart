@@ -29,10 +29,10 @@ export async function POST(request) {
     }).then(async(coupon) => {
         // Run inngest function to delete expired coupons
         await inngest.send({
-          name: "delete-expired-coupons",
+          name: "app/coupon.expired",
           data: {
             code: coupon.code,
-            expiresAt: coupon.expiresAt,
+            expires_at: coupon.expiresAt,
           }
         });
         return coupon
