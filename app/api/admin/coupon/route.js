@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import prisma from "src/db";
 import authAdmin from "@/middlewares/authAdmin";
 import { getAuth } from "@clerk/nextjs/server";
+import { inngest } from "@/inngest/client";
 
 // Adding new coupon route for admin to create coupons
 
@@ -23,8 +24,18 @@ export async function POST(request) {
         forNewUser: Boolean(coupon.forNewUser),
         forMember: Boolean(coupon.forMember),
         isPublic: Boolean(coupon.isPublic),
-        expiresAt: coupon.expiresAt ? new Date(coupon.expiresAt) : null,
+        expiresAt: new Date(coupon.expiresAt),
       },
+    }).then(async(coupon) => {
+        // Run inngest function to delete expired coupons
+        await inngest.send({
+          name: "delete-expired-coupons",
+          data: {
+            code: coupon.code,
+            expiresAt: coupon.expiresAt,
+          }
+        });
+        return coupon
     });
 
     return NextResponse.json({
