@@ -53,6 +53,9 @@ const Footer = () => {
                     <div>
                         <Link href="/" className="text-4xl font-semibold text-slate-700">
                             <span className="text-green-600">Drop</span>Cart<span className="text-green-600 text-5xl leading-0">.</span>
+                            <p className="absolute text-xs font-semibold -top-1 -right-8 px-3 p-0.5 rounded-full flex items-center gap-2 text-white bg-green-500">
+                            .NG
+                            </p>
                         </Link>
                         <p className="max-w-[410px] mt-6 text-sm">Welcome to dropcart, your ultimate destination for the latest and smartest gadgets. From smartphones and smartwatches to essential accessories, we bring you the best in innovation — all in one place.</p>
                         <div className="flex items-center gap-3 mt-5">
