@@ -8,7 +8,7 @@ import authSeller from "@/middlewares/authSeller";
 
 export async function GET(request) {
   try {
-    const {userId} = getAuth(request())
+    const {userId} = getAuth(request)
     const storeId = await authSeller(userId)
 
     // get total orders for the store

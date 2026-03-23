@@ -18,7 +18,6 @@ const authSeller = async (userId) => {
     console.error(error)
     return false
   }
-  I;
 };
 
 export default authSeller
