@@ -37,6 +37,6 @@ const StoreInfo = ({store}) => {
             </div>
         </div>
     )
-}
+} 
 
 export default StoreInfo
