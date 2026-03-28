@@ -19,6 +19,8 @@ const Hero = () => {
                         </div>
                         <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-600 to-[#595e57] bg-clip-text text-transparent max-w-xs  sm:max-w-md'>
                             Gadgets you'll love. Prices you'll trust.
+                            Perfect for small and medium-sized business.
+                            order from the comfort of your home/office and it will be delivered to you anywhere nation wide.
                         </h2>
                         <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
                             <p>Starts from</p>
