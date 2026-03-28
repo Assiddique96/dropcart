@@ -18,10 +18,12 @@ const Hero = () => {
                             <span className='bg-gray-400 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>NEWS</span> Free Shipping on Orders Above {currency}1,000,000.00! <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
                         </div>
                         <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-600 to-[#595e57] bg-clip-text text-transparent max-w-xs  sm:max-w-md'>
-                            <p>Gadgets you'll love. Prices you'll trust.</p>
-                            <p>Perfect for small and medium-sized business.</p>
-                            <p>Order from the comfort of your home/office and it will be delivered to you anywhere nation wide.</p>
+                            Gadgets you'll love. Prices you'll trust.
                         </h2>
+                        <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
+                             <p>Perfect for small and medium-sized business.</p>
+                            <p>Order from the comfort of your home/office and it will be delivered to you anywhere nation wide.</p>
+                        </div>
                         <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
                             <p>Starts from</p>
                             <p className='text-3xl'>{currency}40,000</p>
