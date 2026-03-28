@@ -33,7 +33,7 @@ const Navbar = () => {
                         </p>
                         <Show when={{ plan: 'plus' }}>   
                             <p className="absolute text-xs font-semibold -top-1 -right-8 px-3 p-0.5 rounded-full flex items-center gap-2 text-white bg-gray-500">
-                            Plus
+                            NG
                         </p>
                         </Show>
                     </Link>
