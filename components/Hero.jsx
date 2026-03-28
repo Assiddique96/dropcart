@@ -22,7 +22,7 @@ const Hero = () => {
                         </h2>
                         <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
                              <p>Perfect for small and medium-sized business.</p>
-                            <p>Order from the comfort of your home/office and it will be delivered to you anywhere nation wide.</p>
+                            <p>Order from the comfort of your home/office anywhere nation wide.</p>
                         </div>
                         <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
                             <p>Starts from</p>
