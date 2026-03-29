@@ -17,7 +17,7 @@ export async function POST(request) {
           status: 400,
         },
       );
-      I;
+      
     }
 
     const storeId = await authSeller(userId);

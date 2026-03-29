@@ -10,8 +10,11 @@ export async function POST(request) {
 
         const coupon = await prisma.coupon.findUnique({
             where: {
-                code: code
-            }
+                        code: code.toUpperCase(),
+                        expiresAt: {
+                            gt: new Date()
+                        }
+                    }
         });
 
         if (!coupon) {
@@ -39,7 +42,9 @@ export async function POST(request) {
 
         return NextResponse.json({ coupon });
     } catch (error) {
-        console.error(error)
-        return NextResponse.json({ error : error.code || error.message}, { status: 400 });
+        console.error("Coupon Verification Error:", error);
+    return NextResponse.json(
+        { error: "Something went wrong while verifying the coupon." }, 
+        { status: 500 })
     }
 }

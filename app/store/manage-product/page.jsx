@@ -50,7 +50,7 @@ export default function StoreManageProducts() {
       product.id === productId ? { ...product, inStock: !product.inStock } : product
     ))
 
-    toast.success(data.message)  // now works
+    toast.success(data.message) 
   } catch (error) {
     toast.error(error.response?.data?.error || error.message)
   }
