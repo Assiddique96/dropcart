@@ -53,7 +53,7 @@ export async function GET(request) {
     });
     return NextResponse.json({ ratings });
   } catch (error) {
-    console.error(error);
+    //console.error(error);
     return NextResponse.json(
       { error: error.code || error.message },
       { status: 400 },
