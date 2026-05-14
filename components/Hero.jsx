@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { assets } from '@/assets/assets'
 import { ArrowRightIcon, ChevronRightIcon } from 'lucide-react'
 import CategoriesMarquee from './CategoriesMarquee'
-import Carousel, { CarouselSlide } from './Carousel'
+import Carousel, { CarouselSlide } from './carousel/Carousel' // adjust path if needed
 
 const Hero = () => {
   const currency = process.env.NEXT_PUBLIC_CURRENCY_SYMBOL || '$'
@@ -31,35 +31,44 @@ const Hero = () => {
         <div className='relative flex-1 flex flex-col bg-gray-300 rounded-3xl xl:min-h-100 group'>
           <div className='p-5 sm:p-16'>
             <div className='inline-flex items-center gap-3 bg-gray-900 text-gray-500 pr-4 p-1 rounded-full text-xs sm:text-sm'>
-              <span className='bg-gray-400 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>NEWS</span> 20% Shipping Discount on Orders Above {currency}1,000,000.00! <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
+              <span className='bg-gray-400 px-3 py-1 max-sm:ml-1 rounded-full text-white text-xs'>NEWS</span>
+              20% Shipping Discount on Orders Above {currency}1,000,000.00!
+              <ChevronRightIcon className='group-hover:ml-2 transition-all' size={16} />
             </div>
-            <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-600 to-[#595e57] bg-clip-text text-transparent max-w-xs  sm:max-w-md'>
+
+            <h2 className='text-3xl sm:text-5xl leading-[1.2] my-3 font-medium bg-gradient-to-r from-slate-600 to-[#595e57] bg-clip-text text-transparent max-w-xs sm:max-w-md'>
               Gadgets you'll love. Prices you'll trust.
             </h2>
+
             <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
               <p>Perfect for small and medium-sized business.</p>
               <p>Order from the comfort of your home/office anywhere nation wide.</p>
             </div>
+
             <div className='text-slate-800 text-sm font-medium mt-4 sm:mt-8'>
               <p>Starts from</p>
               <p className='text-3xl'>{currency}40,000</p>
             </div>
-            <button className='bg-slate-800 text-white text-sm py-2.5 px-7 sm:py-5 sm:px-12 mt-4 sm:mt-10 rounded-md hover:bg-slate-900 hover:scale-103 active:scale-95 transition'>Shop Now!</button>
+
+            <button className='bg-slate-800 text-white text-sm py-2.5 px-7 sm:py-5 sm:px-12 mt-4 sm:mt-10 rounded-md hover:bg-slate-900 hover:scale-103 active:scale-95 transition'>
+              Shop Now!
+            </button>
           </div>
 
-          {/* keep large image on wide screens */}
+          {/* Keep large image on wide screens */}
           <div className='hidden sm:block sm:absolute bottom-0 right-0 md:right-10 w-full sm:max-w-sm'>
             <Image src={assets.hero_model_img} alt='' width={420} height={420} />
           </div>
         </div>
 
+        {/* Right column: Carousel presentational component */}
         <div className='flex flex-col md:flex-row xl:flex-col gap-5 w-full xl:max-w-sm text-sm text-slate-600'>
           <Carousel
             options={{
               breakpoints: [
                 { width: 0, perView: 1 },
                 { width: 640, perView: 1 },
-                { width: 900, perView: 2 }, // show 2 per view >=900px
+                { width: 900, perView: 2 },
                 { width: 1200, perView: 2 },
               ],
               gap: 12,
@@ -68,14 +77,14 @@ const Hero = () => {
               loop: true,
               showDots: true,
               showControls: true,
-              onBannerClick: handleBannerClick,
             }}
+            onBannerClick={handleBannerClick}
           >
             <CarouselSlide id='promo-best' meta={{ type: 'best_products' }}>
               <div className='flex-1 flex items-center justify-between w-full bg-gray-200 rounded-3xl p-6 px-8 group'>
                 <div>
                   <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#918e8a] bg-clip-text text-transparent max-w-40'>Best products</p>
-                  <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
+                  <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /></p>
                 </div>
                 <div className='w-35'>
                   <Image src={assets.hero_product_img1} alt='best product' width={120} height={120} loading='lazy' placeholder={assets.hero_product_img1Blur ? 'blur' : undefined} blurDataURL={assets.hero_product_img1Blur} />
@@ -87,7 +96,7 @@ const Hero = () => {
               <div className='flex-1 flex items-center justify-between w-full bg-gray-400 rounded-3xl p-6 px-8 group'>
                 <div>
                   <p className='text-3xl font-medium bg-gradient-to-r from-slate-800 to-[#263240] bg-clip-text text-transparent max-w-40'>20% discounts</p>
-                  <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /> </p>
+                  <p className='flex items-center gap-1 mt-4'>View more <ArrowRightIcon className='group-hover:ml-2 transition-all' size={18} /></p>
                 </div>
                 <div className='w-35'>
                   <Image src={assets.hero_product_img2} alt='discount product' width={120} height={120} loading='lazy' placeholder={assets.hero_product_img2Blur ? 'blur' : undefined} blurDataURL={assets.hero_product_img2Blur} />
